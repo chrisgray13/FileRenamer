@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<DataToExport>
+   <Tables type="System">
+      <Table name="RFS_Environment">
+         <Columns>
+            <Column>EnvironmentID</Column>
+            <Column>Description</Column>
+         </Columns>
+      </Table>
+      <Table name="RFS_TxHeader">
+         <Columns>
+            <Column>TxID</Column>
+            <Column>EnvironmentID</Column>
+            <Column>TxStatus</Column>
+            <Column>WorkFlowID</Column>
+            <Column>UserID</Column>
+            <Column>TxOriginal</Column>
+         </Columns>
+      </Table>
+      <Table name="RFS_TxType">
+         <Columns>
+            <Column>EnvironmentID</Column>
+            <Column>Tx</Column>
+            <Column>TxType</Column>
+            <Column>WorkFlowID</Column>
+         </Columns>
+      </Table>
+      <Table name="RFS_Users">
+         <Columns>
+            <Column>UserID</Column>
+            <Column>LastName</Column>
+            <Column>FirstName</Column>
+         </Columns>
+      </Table>
+   </Tables>
+   <Tables type="Business">
+      <Table name="F0005">
+         <Columns>
+            <Column>DRSY</Column>
+            <Column>DRRT</Column>
+            <Column>DRKY</Column>
+            <Column>DRDL01</Column>
+            <Column>DRDL02</Column>
+            <Column>DRSPHD</Column>
+            <Column>DRUDCO</Column>
+            <Column>DRHRDC</Column>
+            <Column>DRUPMJ</Column>
+            <Column>DRUPMT</Column>
+         </Columns>
+      </Table>
+      <Table name="F0006">
+         <Columns>
+            <Column>*</Column>
+         </Columns>
+      </Table>
+      <Table name="F0101">
+         <Columns>
+            <Column>*</Column>
+         </Columns>
+      </Table>
+      <Table name="F0116">
+         <Columns>
+            <Column>*</Column>
+         </Columns>
+      </Table>
+      <Table name="F4101">
+         <Columns>
+            <Column>*</Column>
+         </Columns>
+      </Table>
+      <Table name="F4211">
+         <Columns>
+            <Column>SDKCOO</Column>
+            <Column>SDDOCO</Column>
+            <Column>SDDCTO</Column>
+            <Column>SDLNID</Column>
+            <Column>SDMCU</Column>
+            <Column>SDSHAN</Column>
+            <Column>SDPDDJ</Column>
+            <Column>SDRSDJ</Column>
+            <Column>SDLITM</Column>
+            <Column>SDNXTR</Column>
+            <Column>SDUORG</Column>
+            <Column>SDUOM</Column>
+         </Columns>
+      </Table>
+      <Table name="F4311">
+         <Columns>
+            <Column>PDKCOO</Column>
+            <Column>PDDOCO</Column>
+            <Column>PDDCTO</Column>
+            <Column>PDLNID</Column>
+            <Column>PDSFXO</Column>
+            <Column>PDMCU</Column>
+            <Column>PDSHAN</Column>
+            <Column>PDPDDJ</Column>
+            <Column>PDPSDJ</Column>
+            <Column>PDLITM</Column>
+            <Column>PDNXTR</Column>
+            <Column>PDUORG</Column>
+            <Column>PDUOM</Column>
+         </Columns>
+      </Table>
+   </Tables>
+</DataToExport>

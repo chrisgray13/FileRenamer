@@ -1,0 +1,100 @@
+UPDATE F0005
+SET DRDL01 = REPLACE(DRDL01, 'Crocs', 'Demo')
+WHERE DRDL01 LIKE '%Crocs%'
+
+GO
+
+UPDATE F0005
+SET DRDL01 = REPLACE(DRDL01, 'Footwear', 'Company')
+WHERE DRDL01 LIKE '%Footwear%'
+
+GO
+
+UPDATE F0005
+SET DRDL02 = REPLACE(DRDL02, 'Crocs', 'Demo')
+WHERE DRDL02 LIKE '%Crocs%'
+
+GO
+
+UPDATE F0005
+SET DRDL02 = REPLACE(DRDL02, 'Footwear', 'Company')
+WHERE DRDL02 LIKE '%Footwear%'
+
+GO
+
+UPDATE F0006
+SET MCDC = REPLACE(MCDC, 'CROCS', 'DEMO')
+WHERE MCDC LIKE '%CROCS%'
+
+GO
+
+UPDATE F0006
+SET MCDL01 = REPLACE(MCDL01, 'Crocs', 'Demo')
+WHERE MCDL01 LIKE '%Crocs%'
+
+GO
+
+/* Manual Update of F0101 ABALPH for lowercase items or other items
+   where straight update and replace would not work well */
+
+GO
+
+UPDATE F0101
+SET ABALPH = REPLACE(ABALPH, 'Crocs', 'Demo')
+WHERE ABALPH LIKE '%Crocs%'
+
+GO
+
+UPDATE F0101
+SET ABALPH = REPLACE(ABALPH, 'Footwear', 'Company')
+WHERE ABALPH LIKE '%Footwear%'
+
+GO
+
+UPDATE F0101
+SET ABDC = REPLACE(ABDC, 'CROCS', 'DEMO')
+WHERE ABDC LIKE '%CROCS%'
+
+GO
+
+UPDATE F0101
+SET ABDC = REPLACE(ABDC, 'FOOTWEAR', 'COMPANY')
+WHERE ABDC LIKE '%FOOTWEAR%'
+
+GO
+
+/* Manual Update of F0116 ALADD1 for lowercase items or other items
+   where straight update and replace would not work well */
+
+GO
+
+UPDATE F0116
+SET ALADD1 = REPLACE(ALADD1, 'Crocs', 'Demo')
+WHERE ALADD1 LIKE '%Crocs%'
+
+GO
+
+UPDATE F0116
+SET ALADD1 = REPLACE(ALADD1, 'Footwear', 'Company')
+WHERE ALADD1 LIKE '%Footwear%'
+
+GO
+
+UPDATE F0116
+SET ALADD2 = REPLACE(ALADD2, 'Crocs', 'Demo')
+WHERE ALADD2 LIKE '%Crocs%'
+
+GO
+
+UPDATE F0116
+SET ALADD2 = REPLACE(ALADD2, 'Footwear', 'Company')
+WHERE ALADD2 LIKE '%Footwear%'
+
+GO
+
+UPDATE F0116
+SET ALADD3 = REPLACE(ALADD3, 'Crocs', 'Demo')
+WHERE ALADD3 LIKE '%Crocs%'
+
+GO
+

@@ -1,0 +1,544 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DataExporter-RFS</name>
+    </assembly>
+    <members>
+        <member name="T:ICS.Utilities.DataExporter.WizardControlPanels.ExportFilePathPanel">
+            <summary>
+            ExportFilePathPanel Class allows a user to specify a file path, which will be used
+            to store the compressed exported data files exported in the same format used by the
+            ObjectWizard.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ExportFilePathPanel.#ctor">
+            <summary>
+            Constructs a new ExportFilePathPanel object.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ExportFilePathPanel.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ExportFilePathPanel.Initialize">
+            <summary>
+            Initializes the panel by adding the controls and event handlers.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ExportFilePathPanel.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ExportFilePathPanel.ConstructSummary">
+            <summary>
+            Constructs the summary for the panel, which includes the export file name to which the
+            exported data will be compressed.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ExportFilePathPanel.ShowDirectoryDialog(System.Object,System.EventArgs)">
+            <summary>
+            Shows the FolderBrowserDialog in order to allow the user to specify a directory to
+            which the exported data will be exported.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ExportFilePathPanel.ValidateExportFilePathProvided(ICS.GUI_Library.Controls.WizardControlPanels.WizardControlPanel,System.EventArgs)">
+            <summary>
+            LeavePanel Event Handler, which validates that an Export File was specified before the user
+            leaves the panel.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <returns>Returns true if an export file was specified; otherwise, false.</returns>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ExportFilePathPanel.GoForwardIfEnterPressed(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Checks to see if the key pressed by the user was the [Enter] key.  If it was, it is treated
+            as though the user clicked the Next button on the wizard.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:ICS.Utilities.DataExporter.WizardControlPanels.ExportFilePathPanel.ExportFilePath">
+            <summary>
+            Gets the file path to which the data will be exported.
+            </summary>
+        </member>
+        <member name="T:ICS.Utilities.DataExporter.WizardControlPanels.CompletedEventHandler">
+            <summary>
+            Used to specify how an Event Handler method should be constructed for the Completed
+            Event.
+            </summary>
+            <param name="e"></param>
+            <param name="sender"></param>
+        </member>
+        <member name="T:ICS.Utilities.DataExporter.WizardControlPanels.SetProgressTextHandler">
+            <summary>
+            Used to specify how a method should be constructed to Set the progress Text.
+            </summary>
+            <param name="sText">Text relating to the progress</param>
+        </member>
+        <member name="T:ICS.Utilities.DataExporter.WizardControlPanels.SetProgressValueHandler">
+            <summary>
+            Used to specify how a method should be constructed to Set the progress Value.
+            </summary>
+            <param name="iValue">Value of progress (0 - 100)</param>
+        </member>
+        <member name="T:ICS.Utilities.DataExporter.WizardControlPanels.ProgressPanel">
+            <summary>
+            ProgressPanel Class is used to display the progress of the task to the user.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ProgressPanel.#ctor">
+            <summary>
+            Constructs a new ProgressPanel object.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ProgressPanel.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">Determines whether or not to release both managed and unmanaged
+            resources or only unmanaged resources.</param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ProgressPanel.Initialize">
+            <summary>
+            Initializes the panel by adding the controls and event handlers.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ProgressPanel.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ProgressPanel.StartTask(ICS.Utilities.DataExporter.DataExporter)">
+            <summary>
+            Starts the task by creating a DataExporter object and running its ExportData method
+            within a new Thread.
+            </summary>
+            <param name="dataExporter"></param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ProgressPanel.UpdateProgress(System.Object,ICS.GUI_Library.EventArguments.ProgressUpdateEventArgs)">
+            <summary>
+            UpdateProgress event for the Process, which is used to handle updating the
+            progress of the Process.
+            </summary>
+            <param name="sender"></param>
+            <param name="e">Progress Update Event Arguments, which include the Progress Message
+            and Progress Value.</param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ProgressPanel.SetProgressText(System.String)">
+            <summary>
+            Sets the progress text.
+            </summary>
+            <param name="sText">Text used to set the progress.</param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ProgressPanel.SetProgressValue(System.Int32)">
+            <summary>
+            Used to set the value of the process's progress.
+            </summary>
+            <param name="iValue">Value used to update the process's progress.</param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.WizardControlPanels.ProgressPanel.RaiseCompletedEvent(System.Object,ICS.GUI_Library.EventArguments.ResultsEventArgs)">
+            <summary>
+            Completed event for the Process indicating that the process is complete, which raise
+            the completed event for an object of this class to indicate completion of the task.
+            </summary>
+            <param name="sender"></param>
+            <param name="e">Indicates the success rate of the data export.</param>
+        </member>
+        <member name="E:ICS.Utilities.DataExporter.WizardControlPanels.ProgressPanel.Completed">
+            <summary>
+            Event to indicate that the task is complete.
+            </summary>
+        </member>
+        <member name="T:ICS.Utilities.DataExporter.UpdateProgressEventHandler">
+            <summary>
+            Used to specify how an Event Handler method should be constructed for the UpdateProgress
+            Event.
+            </summary>
+        </member>
+        <member name="T:ICS.Utilities.DataExporter.TaskCompleteEventHandler">
+            <summary>
+            Used to specify how an Event Handler method should be constructed for the TaskComplete
+            Event.
+            </summary>
+        </member>
+        <member name="T:ICS.Utilities.DataExporter.DataExporter">
+            <summary>
+            Class used to export data from the RFSmart system database and ERP business database
+            for the environments specified.  The data exported is specified within the DataToExport.xml
+            file.
+            </summary>
+        </member>
+        <member name="F:ICS.Utilities.DataExporter.DataExporter._dataAccessLayer">
+            <summary>
+            Data Access Layer used to connect to the System and Business databases
+            </summary>
+        </member>
+        <member name="F:ICS.Utilities.DataExporter.DataExporter._log">
+            <summary>
+            Used to write to RFSmart logs
+            </summary>
+        </member>
+        <member name="F:ICS.Utilities.DataExporter.DataExporter._sEnvironments">
+            <summary>
+            An array of environments for which the data is to be exported
+            </summary>
+        </member>
+        <member name="F:ICS.Utilities.DataExporter.DataExporter._sExportFilePath">
+            <summary>
+            Path to which the export files are to be written
+            </summary>
+        </member>
+        <member name="F:ICS.Utilities.DataExporter.DataExporter._sResults">
+            <summary>
+            Used to store the results of the data export which will be used to write
+            to the FinishedPanel
+            </summary>
+        </member>
+        <member name="F:ICS.Utilities.DataExporter.DataExporter._bResult">
+            <summary>
+            Flag indicating the success of the data export
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporter.#ctor(ICS.Database.DAL,System.String[],System.String)">
+            <summary>
+            Constructs a new DataExport object, which initializes the DataAccessLayer, Logging,
+            Environments, and Export File Path and Name.
+            </summary>
+            <param name="dataAccessLayer">Data Access Layer for the RFSmart Version 3 Database</param>
+            <param name="sEnvironments">An array of Environments to which the converted data
+            will be applied</param>
+            <param name="sExportFilePath">Path used to deposit the exported data.</param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporter.Start">
+            <summary>
+            Exports the data from the RFSmart System database and ERP Business database for each
+            environment specified.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporter.ExportEnvironmentData(System.String,System.Xml.XmlDocument)">
+            <summary>
+            Exports the data for the specified Environment while logging the results.  After the
+            data is exported, the exported data files are compressed into a .zip file.
+            </summary>
+            <param name="sEnvironment">Environment for which the data is to exported.</param>
+            <param name="xmldocDataToExport">Xml Document containing a listing of data to be
+            exported.</param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporter.GetEnvironmentConfiguration(System.String)">
+            <summary>
+            Gets the configuration for the specified environment, which contains information relating
+            to the environment's business data base connection.
+            </summary>
+            <param name="sEnvironment">Environment for which the configuration is needed.</param>
+            <returns>Returns the configuration of the environment specified if fetched; otherwise,
+            null.</returns>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporter.ExportData(System.Xml.XmlNode,System.String,System.String,System.Text.StringBuilder@)">
+            <summary>
+            Exports the data from the RFSmart System database and ERP Business database.
+            </summary>
+            <param name="xmlTablesNode">Xml Node containing the Tables and Columns to be exported</param>
+            <param name="sDBDataType">Database data type (System or Business)</param>
+            <param name="sEnvironment">Environment to be exported, which is needed for the System
+            data to ensure that only the data for that environment is exported.  If this is not
+            provided, null will be used as the default value to exclude the constraint.</param>
+            <param name="strExportedFiles">A StringBuilder to store the exported data file names, which will
+            be used to identify what is to be zipped.</param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporter.GetColumnsToSelect(System.Xml.XmlNode)">
+            <summary>
+            Gets the columns to select from the Xml Node as a string delimited by a comma such that the
+            result may be added directly into a SELECT clause.
+            </summary>
+            <param name="xmlColumnsNode">Xml Node containing a list of column nodes.</param>
+            <returns>Returns a list of columns delimited by a comma based on the columns found.  If
+            nothing is found, "*" is returned.</returns>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporter.ZipExportedDataFiles(System.String,System.Text.StringBuilder)">
+            <summary>
+            Compress the exported data files into a .zip file.
+            </summary>
+            <param name="sEnvironment">Environment for which the data files were exported.</param>
+            <param name="strExportedFiles">A StringBuilder containing a list of the data files exported.</param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporter.RaiseUpdateProgressEvent(System.String,System.Int32)">
+            <summary>
+            Raises the UpdateProgress event, which is used to set the Progress Message and Progress
+            Value to send to the handler.
+            </summary>
+            <param name="sProgressMsg">Message to indicate what the progress is.</param>
+            <param name="iProgressValue">Value between the minimum and maximum values
+            to indicate the progress value.</param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporter.RaiseTaskCompleteEvent(System.Boolean)">
+            <summary>
+            Raises an event indicating that the Task is finished.
+            </summary>
+            <param name="bTaskSuccess">Success rate of the task.</param>
+        </member>
+        <member name="E:ICS.Utilities.DataExporter.DataExporter.UpdateProgress">
+            <summary>
+            Event to update the progress of the export.
+            </summary>
+        </member>
+        <member name="E:ICS.Utilities.DataExporter.DataExporter.TaskComplete">
+            <summary>
+            Event to indicate that the export is complete.
+            </summary>
+        </member>
+        <member name="P:ICS.Utilities.DataExporter.DataExporter.DataToExportFile">
+            <summary>
+            Gets the DataToExport file by checking each reference path within the app root path to see if
+            DataToExport.xml exists.  If it does not exist, DataToExport.xml is returned.
+            </summary>
+        </member>
+        <member name="T:ICS.Utilities.DataExporter.DataExporterApp">
+            <summary>
+            Summary description for DataExporterApp.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterApp.Main(System.String[])">
+            <summary>
+            Main entry point for the application.  It creates an Application Domain for the application
+            in order for it to utilize both the utilities and bin directories.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterApp.LogErrors(System.Exception)">
+            <summary>
+            Logs exceptions to DataExporter-RFS.log.
+            </summary>
+            <param name="ex">Exception that needs to be logged.</param>
+        </member>
+        <member name="T:ICS.Utilities.DataExporter.DataExporterWizard">
+            <summary>
+            Summary description for DataExporterWizard.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterWizard.#ctor">
+            <summary>
+            Constructs a DataExporterWizard object and initializes the screen sequence and components.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterWizard.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterWizard.InitializeSequence">
+            <summary>
+            Initializes the Wizard's sequence by setting the _wizSeq array with
+            the panels in the order in which they should appear to the user.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterWizard.AddShowPanelEvents">
+            <summary>
+            Adds the ShowPanel events to the panels that need to perform some action before they are
+            shown.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterWizard.ConstructSummary">
+            <summary>
+            Constructs the summary by going through each panel and appending the panel's summary to
+            create the summary.
+            </summary>
+            <returns>Returns the constructed summary</returns>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterWizard.Run(System.String[])">
+            <summary>
+            Allows the wizard to be executed from the command-line.  It needs the export path and
+            environment ids.
+            </summary>
+            <param name="args">An array of command-line arguments, which should include the export path
+            and a listing of Environment Ids.</param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterWizard.ShowEnvironmentPanel(ICS.GUI_Library.Controls.WizardControlPanels.WizardControlPanel,System.EventArgs)">
+            <summary>
+            Show Panel event for the Environment selection Panel, which sets the
+            Database Connection based on the RFSmart Version 3 installation.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterWizard.ShowSummaryPanel(ICS.GUI_Library.Controls.WizardControlPanels.WizardControlPanel,System.EventArgs)">
+            <summary>
+            Show Panel event for the Summary Panel, which sets the Summary of the SummaryPanel.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterWizard.ShowProgressPanel(ICS.GUI_Library.Controls.WizardControlPanels.WizardControlPanel,System.EventArgs)">
+            <summary>
+            ShowPanel event for the ProgressPanel, which added a completed event to notify the wizard
+            when the conversion is complete, and starts the conversion.
+            </summary>
+            <param name="sender">Progress Panel</param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterWizard.ConstructResults(System.Object,ICS.GUI_Library.EventArguments.ResultsEventArgs)">
+            <summary>
+            Completed event handler, which is called when the data export is complete.  This sets
+            the active view of the wizard to allow the user to proceed.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterWizard.ShowFinishedPanel(ICS.GUI_Library.Controls.WizardControlPanels.WizardControlPanel,System.EventArgs)">
+            <summary>
+            Show Panel event handler for the Finished panel, which should set the results of the
+            conversion.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataExporterWizard.LogResults(System.Object,ICS.GUI_Library.EventArguments.ResultsEventArgs)">
+            <summary>
+            Logs the results to the DataExporter-RFS system log.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:ICS.Utilities.DataExporter.DataExporterWizard.IntroPnl">
+            <summary>
+            Gets the Intro Panel
+            </summary>
+        </member>
+        <member name="P:ICS.Utilities.DataExporter.DataExporterWizard.EnvironmentPnl">
+            <summary>
+            Gets the Environment Panel
+            </summary>
+        </member>
+        <member name="P:ICS.Utilities.DataExporter.DataExporterWizard.ExpFilePathPnl">
+            <summary>
+            Gets the Export File Path Panel
+            </summary>
+        </member>
+        <member name="P:ICS.Utilities.DataExporter.DataExporterWizard.SummaryPnl">
+            <summary>
+            Gets the Summary Panel
+            </summary>
+        </member>
+        <member name="P:ICS.Utilities.DataExporter.DataExporterWizard.ProgressPnl">
+            <summary>
+            Gets the Progress Panel
+            </summary>
+        </member>
+        <member name="P:ICS.Utilities.DataExporter.DataExporterWizard.FinishedPnl">
+            <summary>
+            Gets the Finished Panel
+            </summary>
+        </member>
+        <member name="T:ICS.Utilities.DataExporter.DataExporterWizard._wizPnls">
+            *************************************************************************************
+             NOTE:  This should be updated anytime a new panel is added to the Wizard's Sequence
+            *************************************************************************************
+            
+             <summary>
+             Enum to hold the panels for easy reference
+             </summary>
+        </member>
+        <member name="T:ICS.Utilities.DataExporter.DataTableExporter">
+            <summary>
+            Summary description for DataTableExporter.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataTableExporter.#ctor(ICS.Database.DAL,System.String,System.String)">
+            <summary>
+            Constructs a DataTableExporter object, which initializes the DataAccessLayer, Export Path, and
+            DB Data Type.
+            </summary>
+            <param name="dataAccessLayer">Data Access Layer for the RFSmart Version 3 Database</param>
+            <param name="sExportPath">Path used to deposit the exported data.</param>
+            <param name="sDBDataType">Database data type (System or Business)</param>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataTableExporter.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataTableExporter.ExportDataTableUsingDataSet(System.String,System.String,System.String)">
+            <summary>
+            Exports data from a table for the columns specified.  The environment is included as part of the
+            criteria for the query if the EnvironmentId exists in the table, which will most likely be a System
+            table.
+            </summary>
+            <param name="sTableName">Name of the table to be exported</param>
+            <param name="sColumnsToSelect">Columns needing to be exported</param>
+            <param name="sEnvironment">Environment for which the data should be exported</param>
+            <returns>Returns true if the data is successfully exported; otherwise, false.</returns>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataTableExporter.FetchDataTable(System.String,System.String,System.String)">
+            <summary>
+            Fetches the data based on the database data type (System or Business).  The If it is a system
+            database, an attempt to filter by EnvironmentId is made.  If the table does not contain
+            the EnvironmentId, or it is a Business table, the data is fetched
+            </summary>
+            <param name="sTableName"></param>
+            <param name="sColumnsToSelect"></param>
+            <param name="sEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataTableExporter.ExportDataTableUsingDataReader(System.String,System.String,System.String)">
+            <summary>
+            Exports data from a table using a DataReader.
+            </summary>
+            <param name="sTableName"></param>
+            <param name="sColumnsToSelect"></param>
+            <param name="sEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICS.Utilities.DataExporter.DataTableExporter.GetQualifiedTable(System.String,System.String)">
+            <summary>
+            Gets the qualified table, which is the table owner, owner separator, and table name
+            concatenated together.  The table owner is retrieved from the RFS_TableOwnerOverride
+            table.  If a record does not exist, the owner is retrieved from the Environment
+            configuration.
+            </summary>
+            <param name="sTableName">Table Name for which the owner is needed.</param>
+            <param name="sEnvironment">Environment for which the owner should be retrieved.</param>
+            <returns>Returns the table owner, owner separator, and table name concatenated together.</returns>
+        </member>
+        <member name="T:ICS.Utilities.UpgradeTool.WizardInstaller">
+            <summary>
+            Summary description for WizardInstaller.
+            </summary>
+        </member>
+        <member name="F:ICS.Utilities.UpgradeTool.WizardInstaller.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.UpgradeTool.WizardInstaller.#ctor">
+            <summary>
+            Constructs a WizardInstaller object and initializes the component
+            </summary>
+        </member>
+        <member name="M:ICS.Utilities.UpgradeTool.WizardInstaller.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">Determines whether or not to release both managed and unmanaged
+            resources or only unmanaged resources.</param>
+        </member>
+        <member name="M:ICS.Utilities.UpgradeTool.WizardInstaller.Install(System.Collections.IDictionary)">
+            <summary>
+            
+            </summary>
+            <param name="stateSaver"></param>
+        </member>
+        <member name="M:ICS.Utilities.UpgradeTool.WizardInstaller.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FileRenamer</name>
+    </assembly>
+    <members>
+        <member name="T:FileRenamer.FileRenamerForm">
+            <summary>
+            Provides the user with the ability to select a group of files and rename them
+            based on the properties and suffix mask specified.
+            </summary>
+        </member>
+        <member name="F:FileRenamer.FileRenamerForm._components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:FileRenamer.FileRenamerForm.#ctor">
+            <summary>
+            Instantiates a FileRenamerForm object and intializes the components.
+            </summary>
+        </member>
+        <member name="M:FileRenamer.FileRenamerForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:FileRenamer.FileRenamerForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:FileRenamer.FileRenamerForm.GetRenamingPropertiesAndRename">
+            <summary>
+            Displays the Renaming Properties Form to the user, and if the user presses the "OK" button,
+            then the properties selected are sent to the renamer process.  At that point, a thread will be started
+            to process the renamer process's RenameFiles method to rename the files.
+            </summary>
+        </member>
+        <member name="M:FileRenamer.FileRenamerForm.SelectFiles(System.Object,System.EventArgs)">
+            <summary>
+            Opens the OpenFileDialog for the user to select the file(s) to be renamed according
+            to the renaming properties specified.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FileRenamer.FileRenamerForm.ExitApplication(System.Object,System.EventArgs)">
+            <summary>
+            Closes the form in order to exit the application.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FileRenamer.FileRenamerForm.ClearLog(System.Object,System.EventArgs)">
+            <summary>
+            Clears the results posted to the log.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FileRenamer.FileRenamerForm.ShowRenamingPropertiesForm(System.Object,System.EventArgs)">
+            <summary>
+            Checks to make sure that the user has specified a list of files and calls a method to
+            display the renaming properties and start the renaming process.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FileRenamer.FileRenamerForm.AddRenamedFileToLog(System.Object,GraySystem.IO.AttributeChangedEventArgs)">
+            <summary>
+            Adds the renamed file to the log textbox for informative purposes.
+            </summary>
+            <param name="sender">Object throwing the event</param>
+            <param name="e">Event arguements relating to a the File renaming operation</param>
+        </member>
+        <member name="M:FileRenamer.FileRenamerForm.HandleRenamingComplete(System.Object,System.String[])">
+            <summary>
+            Resets the cursor and filenames after the renaming is finished.  It also displays a message
+            to the user indicating the files are renamed.
+            </summary>
+            <param name="sender"></param>
+            <param name="sFileNames"></param>
+        </member>
+        <member name="M:FileRenamer.FileRenamerForm.AdjustControlsForResize(System.Object,System.EventArgs)">
+            <summary>
+            Adjusts the controls on the form to same position and ratio as the form changes size.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FileRenamer.FileRenamerForm.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:FileRenamer.FileRenamerPropertiesForm">
+            <summary>
+            Property dialog used to specify how the files will be renamed, the prefix and
+            suffix mask used, and how they will be sorted prior to being renamed to ensure
+            the correct renaming sequence.
+            </summary>
+        </member>
+        <member name="F:FileRenamer.FileRenamerPropertiesForm._components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="P:FileRenamer.FileRenamerPropertiesForm.FilenameTemplate">
+            <summary>
+            Gets the the template created for generating the filenames.
+            </summary>
+        </member>
+        <member name="P:FileRenamer.FileRenamerPropertiesForm.SortingOption">
+            <summary>
+            Gets the Sorting Option specified by the user from the form.
+            </summary>
+        </member>
+        <member name="P:FileRenamer.FileRenamerPropertiesForm.TestRun">
+            <summary>
+            Gets the value of the Test Run checkbox to determine whether or not the operation
+            should actually rename the files or just simulate (test).
+            </summary>
+        </member>
+        <member name="M:FileRenamer.FileRenamerPropertiesForm.#ctor">
+            <summary>
+            Instantiates a FileRenamerPropertiesForm object and initializes the components.
+            </summary>
+        </member>
+        <member name="M:FileRenamer.FileRenamerPropertiesForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:FileRenamer.FileRenamerPropertiesForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:FileRenamer.FileRenamerPropertiesForm.AcceptProperties(System.Object,System.EventArgs)">
+            <summary>
+            Validates that the user entered a valid suffix mask.  If so, the form is closed, after
+            setting the DialogResult to OK.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FileRenamer.FileRenamerPropertiesForm.AcceptPropertiesOnEnter(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Accepts the properties when the user presses the enter key.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FileRenamer.FileRenamerPropertiesForm.ClosePropertiesForm(System.Object,System.EventArgs)">
+            <summary>
+            Closes the form after setting the DialogResult to Cancel.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:FileRenamer.RenamerProcess">
+            <summary>
+            Summary description for RenamerProcess.
+            </summary>
+        </member>
+        <member name="M:FileRenamer.RenamerProcess.#ctor(System.String[],System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="sFileNames"></param>
+            <param name="sOldFileNames"></param>
+        </member>
+        <member name="M:FileRenamer.RenamerProcess.#ctor(System.String[],GraySystem.IO.RenamingTypes,System.String,System.Int32,System.String,System.Boolean)">
+            <summary>
+            Constructs a new instance of the RenamerProcess class and sets the File Names, Rename Value,
+            Rename Prefix, and Suffix Mask used in the renaming process.
+            </summary>
+            <param name="sFileNames">An array of file names including their path</param>
+            <param name="sFilenameTemplate"></param>
+            <param name="sSortingOption">Used to determine how the files should be sorted prior to
+            renaming.  This ensures the suffix mask is used appropriately.</param>
+            <param name="bTestRun"></param>
+        </member>
+        <member name="M:FileRenamer.RenamerProcess.SendRenamedFileToLog(System.Object,GraySystem.IO.AttributeChangedEventArgs)">
+            <summary>
+            Sends a file renamed message inorder to log it.
+            </summary>
+            <param name="sender">Object throwing the event</param>
+            <param name="e">Event arguements relating to a the File renaming operation</param>
+        </member>
+    </members>
+</doc>

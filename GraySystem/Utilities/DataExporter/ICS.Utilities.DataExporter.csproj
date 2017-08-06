@@ -1,0 +1,169 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E676480D-7C97-41D5-A6F9-C298B155FC0A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>..\..\..\Images\AppIcon.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>DataExporter-RFS</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ICS.Utilities.DataExporter</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>ICS.Utilities.DataExporter.DataExporterApp</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>DataExporterWizard.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>DataExporterWizard.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICS.ClearCache">
+      <Name>ICS.ClearCache</Name>
+      <HintPath>..\..\..\..\utilities\ICS.ClearCache.dll</HintPath>
+    </Reference>
+    <Reference Include="ICS.Database">
+      <Name>ICS.Database</Name>
+      <HintPath>..\..\..\..\bin\ICS.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="ICS.Database.TableObjects.JDE">
+      <Name>ICS.Database.TableObjects.JDE</Name>
+      <HintPath>..\..\..\..\basetemps\ICS.Database.TableObjects.JDE.dll</HintPath>
+    </Reference>
+    <Reference Include="ICS.Database.TableObjects.RFS">
+      <Name>ICS.Database.TableObjects.RFS</Name>
+      <HintPath>..\..\..\..\bin\ICS.Database.TableObjects.RFS.dll</HintPath>
+    </Reference>
+    <Reference Include="ICS.GUI_Library">
+      <Name>ICS.GUI_Library</Name>
+      <HintPath>..\..\..\utilities\ICS.GUI_Library.dll</HintPath>
+    </Reference>
+    <Reference Include="ICS.Security">
+      <Name>ICS.Security</Name>
+      <HintPath>..\..\..\..\bin\ICS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="ICS.Utilities">
+      <Name>ICS.Utilities</Name>
+      <HintPath>..\..\..\..\bin\ICS.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration.Install">
+      <Name>System.Configuration.Install</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Management">
+      <Name>System.Management</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataExporter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataExporterApp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataExporterWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataTableExporter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WizardControlPanels\ExportFilePathPanel.cs">
+    </Compile>
+    <Compile Include="WizardControlPanels\ProgressPanel.cs">
+    </Compile>
+    <Compile Include="WizardInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="DataExporterWizard.resx">
+      <DependentUpon>DataExporterWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WizardControlPanels\ExportFilePathPanel.resx">
+      <DependentUpon>ExportFilePathPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WizardControlPanels\ProgressPanel.resx">
+      <DependentUpon>ProgressPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WizardInstaller.resx">
+      <DependentUpon>WizardInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="DataToExport.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>XCOPY /Y $(TargetFileName) $(SolutionDir)utilities
+XCOPY /Y $(ProjectDir)*.xml $(SolutionDir)utilities
+XCOPY /Y $(ProjectDir)*.config $(SolutionDir)utilities</PostBuildEvent>
+  </PropertyGroup>
+</Project>
