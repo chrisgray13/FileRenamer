@@ -119,13 +119,14 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GraySystem\GraySystem.csproj">
-      <Project>{DF9F6D5E-6375-42F1-A8F6-FCC972658D25}</Project>
+      <Project>{df9f6d5e-6375-42f1-a8f6-fcc972658d25}</Project>
       <Name>GraySystem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>XCOPY ..\GraySystem\bin\*.dll /C /R /Y /Q</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
