@@ -175,7 +175,7 @@
             <param name="sFileNames"></param>
             <param name="sOldFileNames"></param>
         </member>
-        <member name="M:FileRenamer.RenamerProcess.#ctor(System.String[],GraySystem.IO.RenamingTypes,System.String,System.Int32,System.String,System.Boolean)">
+        <member name="M:FileRenamer.RenamerProcess.#ctor(System.String[],GraySystem.IO.RenamingTypes,System.String,System.Double,System.String,System.Boolean)">
             <summary>
             Constructs a new instance of the RenamerProcess class and sets the File Names, Rename Value,
             Rename Prefix, and Suffix Mask used in the renaming process.

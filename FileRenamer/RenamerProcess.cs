@@ -23,7 +23,7 @@ namespace FileRenamer
         private RenamingTypes _renamingType;
         private string _sNamingOption;
         private string _sRenamingTemplate;
-        private int _timeOffset;
+        private double _timeOffset;
         private string _sSortingOption;
         private bool _bTestRun;
 
@@ -56,7 +56,7 @@ namespace FileRenamer
         /// <param name="sSortingOption">Used to determine how the files should be sorted prior to
         /// renaming.  This ensures the suffix mask is used appropriately.</param>
         /// <param name="bTestRun"></param>
-        public RenamerProcess(string[] sFileNames, RenamingTypes renamingType, string sRenameTemplate, int timeOffset,
+        public RenamerProcess(string[] sFileNames, RenamingTypes renamingType, string sRenameTemplate, double timeOffset,
                               string sSortingOption, bool bTestRun)
         {
             _sFileNames = sFileNames;

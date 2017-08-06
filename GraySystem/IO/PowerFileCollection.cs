@@ -207,7 +207,7 @@ namespace GraySystem.IO
             return (true);
         } // end Rename
 
-        public bool Rename(string sRenamingTemplate, RenamingTypes renamingType, int timeOffset, bool bTestRun)
+        public bool Rename(string sRenamingTemplate, RenamingTypes renamingType, double timeOffset, bool bTestRun)
         {
             Mask mask = new Mask(sRenamingTemplate);
             DateTimeExtended dtDateCreated = null;

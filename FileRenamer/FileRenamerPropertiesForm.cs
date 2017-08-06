@@ -117,7 +117,7 @@ namespace FileRenamer
 
         #region TimeOffset
 
-        public int TimeOffset
+        public double TimeOffset
         {
             get
             {
@@ -127,9 +127,9 @@ namespace FileRenamer
                 }
                 else
                 {
-                    int offset;
+                    double offset;
 
-                    if (Int32.TryParse(_txtTimeOffset.Text, out offset))
+                    if (Double.TryParse(_txtTimeOffset.Text, out offset))
                     {
                         return offset;
                     }

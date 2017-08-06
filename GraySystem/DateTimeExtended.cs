@@ -50,7 +50,7 @@ namespace GraySystem
 
         #endregion
 
-        public DateTimeExtended AddHours(int timeOffset)
+        public DateTimeExtended AddHours(double timeOffset)
         {
             return new DateTimeExtended(_dtDateTime.AddHours(timeOffset));
         }
