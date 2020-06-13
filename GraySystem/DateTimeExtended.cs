@@ -159,6 +159,16 @@ namespace GraySystem
             } // end else
         } // end GetFormattedSecond
 
+        public override string ToString()
+        {
+            return ToString("g");
+        }
+
+        public string ToStringCustom(string sFormat)
+        {
+            return _dtDateTime.ToString(sFormat);
+        }
+
         public string ToString(string sFormat)
         {
             switch (sFormat[0])
@@ -176,7 +186,7 @@ namespace GraySystem
                 case 's':
                     return (GetFormattedSecond(sFormat));
                 default:
-                    return ("");
+                    return (_dtDateTime.ToString(sFormat));
             } // end switch
         } // end ToString
     }

@@ -96,10 +96,7 @@ namespace FileRenamer
 
         #region ItemToUpdate
 
-        public string ItemToUpdate
-        {
-            get { return (_cmbItemToRename.Text); }
-        }
+        public string ItemToUpdate => (_cmbItemToRename.Text.Replace(" ", String.Empty));
 
         #endregion
 
@@ -285,6 +282,7 @@ namespace FileRenamer
             // _cmbItemToRename
             // 
             this._cmbItemToRename.Items.AddRange(new object[] {
+            "Date Taken",
             "Filename",
             "Title"});
             this._cmbItemToRename.Location = new System.Drawing.Point(112, 51);
@@ -607,7 +605,7 @@ namespace FileRenamer
         /// <param name="e"></param>
         private void AcceptProperties(object sender, System.EventArgs e)
         {
-            if (_txtFilenameTemplate.Text.Trim().Length == 0)
+            if ((_txtFilenameTemplate.Text.Trim().Length == 0) && (_cmbItemToRename.Text.Replace(" ", String.Empty) != RenamingTypes.DateTaken.ToString()))
             {
                 MessageBox.Show(this,
                                 "The filename template may not be blank.  Please construct a filename\n" +

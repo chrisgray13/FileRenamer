@@ -7,6 +7,8 @@ namespace GraySystem.IO
 {
     public enum RenamingTypes
     {
+        DateTaken,
+
         Filename,
 
         Title

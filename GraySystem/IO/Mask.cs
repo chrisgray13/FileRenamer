@@ -28,6 +28,12 @@ namespace GraySystem.IO
 
         #region Properties
 
+        #region IsEmpty
+
+        public bool IsEmpty => String.IsNullOrEmpty(_sMask);
+
+        #endregion
+
         #region MaxMaskChars
 
         /// <summary>
@@ -114,9 +120,9 @@ namespace GraySystem.IO
 
         #endregion
 
-        #region DoesContainADateTime
+        #region DateTimeExists
 
-        public bool DoesContainADateTime
+        public bool DateTimeExists
         {
             get
             {

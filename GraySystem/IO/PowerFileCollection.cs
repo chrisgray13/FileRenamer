@@ -213,12 +213,12 @@ namespace GraySystem.IO
             DateTimeExtended dtDateCreated = null;
             string sCurrentName = String.Empty;
             string sPreviousName = String.Empty;
-            bool bDoesMaskContainADateTime = mask.DoesContainADateTime;
+            bool bGetDateCreated = mask.DateTimeExists || renamingType == RenamingTypes.DateTaken;
             int iCounter = 1;
 
             foreach (PowerFile powerFile in List)
             {
-                if (bDoesMaskContainADateTime)
+                if (bGetDateCreated)
                 {
                     dtDateCreated = powerFile.DatePictureTaken?.AddHours(timeOffset);
                     if (dtDateCreated == null)
@@ -239,7 +239,7 @@ namespace GraySystem.IO
                     }
                 } // end if
 
-                if (dtDateCreated != null || !bDoesMaskContainADateTime)
+                if (dtDateCreated != null || !bGetDateCreated)
                 {
                     var retries = 0;
 
@@ -257,7 +257,18 @@ namespace GraySystem.IO
 
                             sPreviousName = sCurrentName;
 
-                            FileRenamed(this, (renamingType == RenamingTypes.Filename) ? powerFile.Rename(sCurrentName, true, bTestRun) : powerFile.UpdateTitle(sCurrentName, bTestRun));
+                            switch (renamingType)
+                            {
+                                case RenamingTypes.DateTaken:
+                                    FileRenamed(this, powerFile.UpdateDateTaken(dtDateCreated, bTestRun));
+                                    break;
+                                case RenamingTypes.Filename:
+                                    FileRenamed(this, powerFile.Rename(sCurrentName, true, bTestRun));
+                                    break;
+                                case RenamingTypes.Title:
+                                    FileRenamed(this, powerFile.UpdateTitle(sCurrentName, bTestRun));
+                                    break;
+                            }
 
                             break;
                         }

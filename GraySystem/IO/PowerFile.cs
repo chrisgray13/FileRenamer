@@ -151,6 +151,19 @@ namespace GraySystem.IO
                     return (null);
                 } // end catch
             } // end get
+
+            set
+            {
+                using (var image = Image.FromStream(new MemoryStream(System.IO.File.ReadAllBytes(_fileInfo.FullName))))
+                {
+                    var item = image.GetPropertyItem(0x9003);
+
+                    item.Value = Encoding.ASCII.GetBytes(value.ToStringCustom("yyyy:MM:dd HH:mm:ss") + '\0');
+
+                    image.SetPropertyItem(item);
+                    image.Save(_fileInfo.FullName);
+                }
+            }
         } // end DatePictureTaken property
 
         #endregion
@@ -364,6 +377,36 @@ namespace GraySystem.IO
                 _sNewFileName = _fileInfo.FullName;
 
                 return (new TitleChangedEventArgs(_fileInfo.FullName, sNewTitle, false, ex.Message, false));
+            } // end catch
+        } // end Rename
+
+
+        #endregion
+
+        #region UpdateDateTaken
+
+        public AttributeChangedEventArgs UpdateDateTaken(DateTimeExtended dtNewDateTaken, bool bTestRun)
+        {
+            try
+            {
+                if (bTestRun)
+                {
+                    _sNewFileName = _fileInfo.FullName;
+                } // end if
+                else
+                {
+                    DatePictureTaken = dtNewDateTaken;
+                    _sNewFileName = _fileInfo.FullName;
+                } // end else
+
+                return (new DateTakenChangedEventArgs(_fileInfo.FullName, dtNewDateTaken, true, String.Empty, false));
+            } // end try
+            catch (Exception ex)
+            {
+                // Saving the old file name as the new to retain the correct list of file names
+                _sNewFileName = _fileInfo.FullName;
+
+                return (new DateTakenChangedEventArgs(_fileInfo.FullName, dtNewDateTaken, false, ex.Message, false));
             } // end catch
         } // end Rename
 
